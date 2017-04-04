@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.utng.edu.mx" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.utng.edu.mx" xmlns:intf="http://ws.utng.edu.mx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.utng.edu.mx" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="addInfoNutri">
+    <complexType>
+     <sequence>
+      <element name="infoNutri" type="impl:InfoNutri"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="InfoNutri">
+    <sequence>
+     <element name="azucares" type="xsd:int"/>
+     <element name="calcio" nillable="true" type="xsd:string"/>
+     <element name="carbohidratos" type="xsd:int"/>
+     <element name="colesterol" type="xsd:int"/>
+     <element name="contenidoEnergetico" nillable="true" type="xsd:string"/>
+     <element name="fibraDietetica" type="xsd:int"/>
+     <element name="grasaSaturada" type="xsd:int"/>
+     <element name="id" type="xsd:int"/>
+     <element name="lipidos" type="xsd:int"/>
+     <element name="proteinas" type="xsd:int"/>
+     <element name="sodio" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="addInfoNutriResponse">
+    <complexType>
+     <sequence>
+      <element name="addInfoNutriReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="editInfoNutri">
+    <complexType>
+     <sequence>
+      <element name="infoNutri" type="impl:InfoNutri"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="editInfoNutriResponse">
+    <complexType>
+     <sequence>
+      <element name="editInfoNutriReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInfoNutriByid">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInfoNutriByidResponse">
+    <complexType>
+     <sequence>
+      <element name="getInfoNutriByidReturn" type="impl:InfoNutri"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeInfoNutri">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeInfoNutriResponse">
+    <complexType>
+     <sequence>
+      <element name="removeInfoNutriReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getInfoNutris">
+    <complexType/>
+   </element>
+   <element name="getInfoNutrisResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getInfoNutrisReturn" type="impl:InfoNutri"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addInfoNutriResponse">
+
+      <wsdl:part element="impl:addInfoNutriResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInfoNutriByidResponse">
+
+      <wsdl:part element="impl:getInfoNutriByidResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeInfoNutriRequest">
+
+      <wsdl:part element="impl:removeInfoNutri" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeInfoNutriResponse">
+
+      <wsdl:part element="impl:removeInfoNutriResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addInfoNutriRequest">
+
+      <wsdl:part element="impl:addInfoNutri" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInfoNutrisRequest">
+
+      <wsdl:part element="impl:getInfoNutris" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="editInfoNutriResponse">
+
+      <wsdl:part element="impl:editInfoNutriResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="editInfoNutriRequest">
+
+      <wsdl:part element="impl:editInfoNutri" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInfoNutriByidRequest">
+
+      <wsdl:part element="impl:getInfoNutriByid" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getInfoNutrisResponse">
+
+      <wsdl:part element="impl:getInfoNutrisResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="InfoNutriWS">
+
+      <wsdl:operation name="addInfoNutri">
+
+         <wsdl:input message="impl:addInfoNutriRequest" name="addInfoNutriRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addInfoNutriResponse" name="addInfoNutriResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="editInfoNutri">
+
+         <wsdl:input message="impl:editInfoNutriRequest" name="editInfoNutriRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:editInfoNutriResponse" name="editInfoNutriResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInfoNutriByid">
+
+         <wsdl:input message="impl:getInfoNutriByidRequest" name="getInfoNutriByidRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getInfoNutriByidResponse" name="getInfoNutriByidResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeInfoNutri">
+
+         <wsdl:input message="impl:removeInfoNutriRequest" name="removeInfoNutriRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeInfoNutriResponse" name="removeInfoNutriResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInfoNutris">
+
+         <wsdl:input message="impl:getInfoNutrisRequest" name="getInfoNutrisRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getInfoNutrisResponse" name="getInfoNutrisResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="InfoNutriWSSoapBinding" type="impl:InfoNutriWS">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addInfoNutri">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addInfoNutriRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addInfoNutriResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="editInfoNutri">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="editInfoNutriRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="editInfoNutriResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInfoNutriByid">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getInfoNutriByidRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getInfoNutriByidResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeInfoNutri">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeInfoNutriRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeInfoNutriResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getInfoNutris">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getInfoNutrisRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getInfoNutrisResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="InfoNutriWSService">
+
+      <wsdl:port binding="impl:InfoNutriWSSoapBinding" name="InfoNutriWS">
+
+         <wsdlsoap:address location="http://localhost:8087/WSInfoNutri/services/InfoNutriWS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

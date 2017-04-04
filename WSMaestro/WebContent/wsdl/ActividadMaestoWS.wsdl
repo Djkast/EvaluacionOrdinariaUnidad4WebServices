@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.utng.edu.mx" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.utng.edu.mx" xmlns:intf="http://ws.utng.edu.mx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.utng.edu.mx" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="main">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="args" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="mainResponse">
+    <complexType/>
+   </element>
+   <element name="removeActMaestro">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeActMaestroResponse">
+    <complexType>
+     <sequence>
+      <element name="removeActMaestroReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addActMaestro">
+    <complexType>
+     <sequence>
+      <element name="actMaestro" type="impl:ActMaestro"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="ActMaestro">
+    <sequence>
+     <element name="activ" nillable="true" type="xsd:string"/>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="id" type="xsd:int"/>
+     <element name="name" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="addActMaestroResponse">
+    <complexType>
+     <sequence>
+      <element name="addActMaestroReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="editActMaestro">
+    <complexType>
+     <sequence>
+      <element name="actMaestro" type="impl:ActMaestro"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="editActMaestroResponse">
+    <complexType>
+     <sequence>
+      <element name="editActMaestroReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getActMaestros">
+    <complexType/>
+   </element>
+   <element name="getActMaestrosResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getActMaestrosReturn" type="impl:ActMaestro"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMovieByid">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMovieByidResponse">
+    <complexType>
+     <sequence>
+      <element name="getMovieByidReturn" type="impl:ActMaestro"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="editActMaestroRequest">
+
+      <wsdl:part element="impl:editActMaestro" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMovieByidRequest">
+
+      <wsdl:part element="impl:getMovieByid" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeActMaestroRequest">
+
+      <wsdl:part element="impl:removeActMaestro" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeActMaestroResponse">
+
+      <wsdl:part element="impl:removeActMaestroResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addActMaestroResponse">
+
+      <wsdl:part element="impl:addActMaestroResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mainRequest">
+
+      <wsdl:part element="impl:main" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="mainResponse">
+
+      <wsdl:part element="impl:mainResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMovieByidResponse">
+
+      <wsdl:part element="impl:getMovieByidResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addActMaestroRequest">
+
+      <wsdl:part element="impl:addActMaestro" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getActMaestrosRequest">
+
+      <wsdl:part element="impl:getActMaestros" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="editActMaestroResponse">
+
+      <wsdl:part element="impl:editActMaestroResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getActMaestrosResponse">
+
+      <wsdl:part element="impl:getActMaestrosResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ActividadMaestoWS">
+
+      <wsdl:operation name="main">
+
+         <wsdl:input message="impl:mainRequest" name="mainRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:mainResponse" name="mainResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeActMaestro">
+
+         <wsdl:input message="impl:removeActMaestroRequest" name="removeActMaestroRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeActMaestroResponse" name="removeActMaestroResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addActMaestro">
+
+         <wsdl:input message="impl:addActMaestroRequest" name="addActMaestroRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addActMaestroResponse" name="addActMaestroResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="editActMaestro">
+
+         <wsdl:input message="impl:editActMaestroRequest" name="editActMaestroRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:editActMaestroResponse" name="editActMaestroResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getActMaestros">
+
+         <wsdl:input message="impl:getActMaestrosRequest" name="getActMaestrosRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getActMaestrosResponse" name="getActMaestrosResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMovieByid">
+
+         <wsdl:input message="impl:getMovieByidRequest" name="getMovieByidRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMovieByidResponse" name="getMovieByidResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ActividadMaestoWSSoapBinding" type="impl:ActividadMaestoWS">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="main">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="mainRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="mainResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeActMaestro">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeActMaestroRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeActMaestroResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addActMaestro">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addActMaestroRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addActMaestroResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="editActMaestro">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="editActMaestroRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="editActMaestroResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getActMaestros">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getActMaestrosRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getActMaestrosResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMovieByid">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMovieByidRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMovieByidResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ActividadMaestoWSService">
+
+      <wsdl:port binding="impl:ActividadMaestoWSSoapBinding" name="ActividadMaestoWS">
+
+         <wsdlsoap:address location="http://localhost:8087/WSMaestro/services/ActividadMaestoWS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
